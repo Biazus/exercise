@@ -1,0 +1,19 @@
+<html>
+    <head></head>
+    <body>
+        <form enctype="multipart/form-data" method="post" >
+          {% csrf_token %}
+
+          <div><label for="{{ form.file.id_for_label }}">XML File:</label>
+            {{ form.file }}
+
+            {% if error %}
+                {{ error }}
+            {% endif %}
+
+          </div>
+
+          <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>
